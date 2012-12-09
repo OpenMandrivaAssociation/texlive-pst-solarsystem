@@ -58,3 +58,11 @@ not in the correct size.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar dvips tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Mon Jan 09 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.12-1
++ Revision: 759028
+- texlive-pst-solarsystem
+- texlive-pst-solarsystem
+
