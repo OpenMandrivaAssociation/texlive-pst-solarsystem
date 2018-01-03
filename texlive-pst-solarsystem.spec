@@ -1,19 +1,12 @@
-# revision 24995
-# category Package
-# catalog-ctan /graphics/pstricks/contrib/pst-solarsystem
-# catalog-date 2012-01-01 19:16:20 +0100
-# catalog-license lppl
-# catalog-version 0.12
 Name:		texlive-pst-solarsystem
-Version:	0.12
-Release:	9
+Version:	0.13
+Release:	1
 Summary:	Plot the solar system for a specific date
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-solarsystem
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.source.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -38,31 +31,17 @@ not in the correct size.
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/dvips/pst-solarsystem/pst-solarsystem.pro
-%{_texmfdistdir}/tex/generic/pst-solarsystem/pst-solarsystem.tex
-%{_texmfdistdir}/tex/latex/pst-solarsystem/pst-solarsystem.sty
-%doc %{_texmfdistdir}/doc/generic/pst-solarsystem/Changes
-%doc %{_texmfdistdir}/doc/generic/pst-solarsystem/README
-%doc %{_texmfdistdir}/doc/generic/pst-solarsystem/pst-solarsystem-doc.bib
-%doc %{_texmfdistdir}/doc/generic/pst-solarsystem/pst-solarsystem-doc.pdf
-%doc %{_texmfdistdir}/doc/generic/pst-solarsystem/pst-solarsystem-doc.tex
-#- source
-%doc %{_texmfdistdir}/source/generic/pst-solarsystem/Makefile
+%{_texmfdistdir}/dvips/pst-solarsystem
+%{_texmfdistdir}/tex/generic/pst-solarsystem
+%{_texmfdistdir}/tex/latex/pst-solarsystem
+%doc %{_texmfdistdir}/doc/generic/pst-solarsystem
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a0 -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar dvips tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Mon Jan 09 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.12-1
-+ Revision: 759028
-- texlive-pst-solarsystem
-- texlive-pst-solarsystem
-
+cp -fpar dvips tex doc %{buildroot}%{_texmfdistdir}
