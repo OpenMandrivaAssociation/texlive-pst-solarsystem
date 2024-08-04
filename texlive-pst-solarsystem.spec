@@ -1,6 +1,6 @@
 Name:		texlive-pst-solarsystem
-Version:	45097
-Release:	2
+Version:	69675
+Release:	1
 Summary:	Plot the solar system for a specific date
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-solarsystem
