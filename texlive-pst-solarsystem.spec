@@ -3,7 +3,7 @@ Version:	69675
 Release:	1
 Summary:	Plot the solar system for a specific date
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-solarsystem
+URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-solarsystem
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.doc.r%{version}.tar.xz
