@@ -1,47 +1,25 @@
-Name:		texlive-pst-solarsystem
-Version:	69675
-Release:	1
+%global tl_name pst-solarsystem
+%global tl_revision 69675
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.15
+Release:	%{tl_revision}.1
 Summary:	Plot the solar system for a specific date
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-solarsystem
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.doc.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-solarsystem.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package uses pstricks to produce diagrams of the visible
-planets, projected on the plane of the ecliptic. It is not
-possible to represent all the planets in their real
-proportions, so only Mercury, Venus, Earth and Mars have their
-orbits in correct proportions and their relative sizes are
-observed. Saturn and Jupiter are in the right direction, but
+The package uses pstricks to produce diagrams of the visible planets,
+projected on the plane of the ecliptic. It is not possible to represent
+all the planets in their real proportions, so only Mercury, Venus, Earth
+and Mars have their orbits in correct proportions and their relative
+sizes are observed. Saturn and Jupiter are in the right direction, but
 not in the correct size.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/dvips/pst-solarsystem
-%{_texmfdistdir}/tex/generic/pst-solarsystem
-%{_texmfdistdir}/tex/latex/pst-solarsystem
-%doc %{_texmfdistdir}/doc/generic/pst-solarsystem
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar dvips tex doc %{buildroot}%{_texmfdistdir}
